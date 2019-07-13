@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m8 l8">
-          <div class="blogs mb-30" v-for="(blog,index) in blogList" :key="index">
+          <div class="blogs mb-30" v-for="(blog,index) in blogList" :key="index" v-if="blogList">
             <div class="card">
               <div class="card-image">
-                <img :src="blog.imgSrc" alt="Image">
+                <img src="/static/img/selfie.jpg" alt="Image">
                 <a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
                   <i class="icofont icofont-camera-alt"></i>
                 </a>
@@ -14,25 +14,25 @@
               <!-- /.card-image -->
               <div class="card-content w100dt">
                 <p>
-                  <a href="#" class="tag left w100dt l-blue mb-30">{{blog.category}}</a>
+                  <a href="#" class="tag left w100dt l-blue mb-30">{{blog.article_category}}</a>
                 </p>
-                <a @click="getBlogDetail" class="card-title">{{blog.title}}</a>
-                <p class="mb-30">{{blog.preview}}</p>
+                <a @click="getBlogDetail" class="card-title">{{blog.article_title}}</a>
+                <p class="mb-30">{{blog.article_title}}</p>
                 <ul class="post-mate-time left">
                   <li>
-                    <p class="hero left">By - <span class="l-blue">{{blog.author.userName}}</span>
+                    <p class="hero left">By - <span class="l-blue">{{blog.article_author}}</span>
                     </p>
                   </li>
                   <li>
-                    <i class="icofont icofont-ui-calendar"></i> {{blog.author.date}}
+                    <i class="icofont icofont-ui-calendar"></i> {{blog.article_time}}
                   </li>
                 </ul>
                 <ul class="post-mate right">
                   <li class="like">
-                    <i class="icofont icofont-heart-alt"></i> {{blog.review.heart}}
+                    <i class="icofont icofont-heart-alt"></i> {{blog.article_like_count}}
                   </li>
                   <li class="comment">
-                    <i class="icofont icofont-comment"></i> {{blog.review.comment}}
+                    <i class="icofont icofont-comment"></i> {{blog.article_comment_count}}
                   </li>
                 </ul>
               </div>
@@ -55,48 +55,32 @@
   import Me from '../components/Me'
   import TopPost from '../components/TopPost'
   import FeaturePost from '../components/FeaturedPost'
+  import api from '../api'
 
   export default {
     name: "blog-list",
     data() {
       return {
         blogList: [
-          {
-            imgSrc: "../../static/img/selfie.jpg",
-            category: 'Lifestyle',
-            title: '秋水共长天一色',
-            preview: "豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。",
-            author: {
-              userName: 'yxwei',
-              date: '2019-4-11'
-            },
-            review: {
-              heart: 34,
-              comment: 67
-            }
-          }, {
-            imgSrc: "../../static/img/selfie.jpg",
-            category: 'Lifestyle',
-            title: '那年的我们正是青春年少时',
-            preview: "有些人的人生一直在一个梦里打转，在现实里遗憾，在回忆里期盼，错过的那个人如同心口的朱砂痣一般越来越明艳越来越刺眼。",
-            author: {
-              userName: 'yxwei',
-              date: '2019-6-11'
-            },
-            review: {
-              heart: 256,
-              comment: 100
-            }
-          }
+
         ]
       }
+    },
+    created() {
+      this.getData();
     },
     components: {
       'its-me': Me,
       'top-post': TopPost,
-      'feature-post':FeaturePost
+      'feature-post': FeaturePost
     },
     methods: {
+      getData() {
+        api.get_articleList('', (res) => {
+          debugger
+          this.blogList = res;
+        })
+      },
       getBlogDetail() {
         this.$router.push('/detail');
       }

@@ -22,9 +22,9 @@
       "blog-list": blogList,
       "top-slider": topSlider
     },
-    created(){
+    created() {
       this.$store.dispatch('setNav', 0).then(() => {
-
+        //this.getData();
       })
     }
   }
