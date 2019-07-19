@@ -1,6 +1,6 @@
-# my-blog-web
+# blog-web
 
-> My Blog Web For Vue.js
+> A Vue.js project
 
 ## Build Setup
 
