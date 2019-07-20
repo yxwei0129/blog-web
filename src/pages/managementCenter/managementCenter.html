@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理后台</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+  <!--必要样式-->
+  <link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+  <!--[if IE]>
+  <script src="/static/js/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
-<div>
-  <a href="index.html">多页面后台</a>
+<div id="app">
+  <top-header></top-header>
+  <router-view></router-view>
 </div>
+</body>
 
+<script src="/static/js/TweenLite.min.js"></script>
+<script src="/static/js/EasePack.min.js"></script>
+<script src="/static/js/rAF.js"></script>
+<script src="/static/js/demo-1.js"></script>
 </body>
 </html>
