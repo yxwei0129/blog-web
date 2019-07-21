@@ -4,25 +4,33 @@
 import loginApi from '../../api/login'
 
 const state = {
-  loginInfo: 'weiyuxin',
+  test: 'weiyuxin',
   token: ''
 }
 
 const mutations = {
   // 此处的事件为上方 actions 中的 commit(types.DECREMENT)
-  updateLogin (state, result) {
-    state.token = result.data.token
+  updateLogin (state, value) {
+    state.token = value.data.token
+  },
+
+  updateTest (state, value) {
+    state.test = value
   }
 }
 
 const actions = {
-  setLogin ({commit}, result) {
+  setLogin ({commit}, value) {
     return new Promise(function (resolve, reject) {
-      loginApi.login(result.loginName, result.password).then(function (value) {
-        commit('updateLogin', value.data)
-        resolve(value.data)
+      loginApi.login(value.loginName, value.password).then(function (result) {
+        commit('updateLogin', result.data)
+        resolve(result.data)
       })
     })
+  },
+
+  setTest ({commit}, value) {
+    commit('updateTest', value)
   }
 }
 
