@@ -9,7 +9,7 @@
             <div class="input_outer">
               <span class="u_user"></span>
               <input name="logname" class="text" style="color: #FFFFFF !important" type="text"
-                     autocomplete="new-password" v-model="userName" placeholder="请输入账户">
+                     autocomplete="new-password" v-model="loginName" placeholder="请输入账户">
             </div>
             <div class="input_outer">
               <span class="us_uer"></span>
@@ -30,13 +30,18 @@ export default {
   name: 'login',
   data () {
     return {
-      userName: '',
+      loginName: '',
       password: ''
     }
   },
   methods: {
     login () {
-      console.log(this.userName + '--' + this.password)
+      let self = this
+      this.$store.dispatch('setLogin', {loginName: this.loginName, password: this.password}).then(function (result) {
+        if (result.status === 200) {
+          self.$router.push({path: '/home'})
+        }
+      })
     }
   }
 }

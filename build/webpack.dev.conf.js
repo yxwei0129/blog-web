@@ -20,7 +20,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
 
-  // these devServer options should be customized in /config/index.js
+  // these devServer options should be customized in /config/managementCenter.js
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
@@ -43,7 +43,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-    index: 'login.html'
+    index: 'managementCenter.html'
   },
   plugins: [
     new webpack.DefinePlugin({
