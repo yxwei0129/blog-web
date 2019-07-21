@@ -9,10 +9,10 @@ import qs from 'qs'
 // axios 配置
 axios.defaults.timeout = 5000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-// axios.defaults.baseURL = 'http://localhost:3000'
 
 // http请求拦截器 请求之前的一些操作
 axios.interceptors.request.use(config => {
+  config.headers.token = window.globalStore.state.login.token
   if (config.method === 'post') {
     config.data = qs.stringify(config.data)// 防止post请求参数无法传到后台
   }
@@ -24,7 +24,14 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(data => {
   return data
 }, error => {
-  return Promise.reject(error)
+  switch (error.response.status) {
+    case 401:
+      window.globalRouter.push({path: '/'})
+      break
+    default:
+      break
+  }
+  return Promise.reject(error.response.data)
 })
 
 export default axios
