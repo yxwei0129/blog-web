@@ -38,6 +38,7 @@ export default {
     login () {
       let self = this
       this.$store.dispatch('setLogin', {loginName: this.loginName, password: this.password}).then(function (result) {
+        alert(JSON.stringify(result))
         if (result.status === 200) {
           self.$router.push({path: '/home'})
         }

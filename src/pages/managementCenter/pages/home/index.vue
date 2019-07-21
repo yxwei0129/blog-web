@@ -12,16 +12,18 @@ import loginApi from '../../api/login'
 export default {
   name: 'Home',
   data () {
-    return {
-      msg: '111'
+    return {}
+  },
+  computed: {
+    msg () {
+      return this.$store.state.login.token
     }
   },
   methods: {
     testToke () {
       let self = this
       loginApi.logout().then(function (reslut) {
-        debugger
-        self.msg = JSON.stringify(reslut.data)
+        self.$store.dispatch('setTest', reslut.data)
       })
     }
   }
