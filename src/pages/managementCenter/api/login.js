@@ -27,7 +27,6 @@ const logout = function () {
   let p = new Promise(function (resolve, reject) {
     window.$axios.get('/api/management/logout')
       .then(function (value) {
-        debugger
         if (value) {
           resolve(value)
         }
