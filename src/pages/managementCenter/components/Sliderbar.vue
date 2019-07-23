@@ -12,8 +12,8 @@
               <li><a @click="changeRoute(2)">添加文章</a></li>
             </ul>
           </li>
-          <li><a href="app-event-calender.html"><i class="ti-calendar"></i> 添加分类 </a></li>
-          <li><a href="app-email.html"><i class="ti-email"></i> 添加标签</a></li>
+          <li><a @click="changeRoute(3)">添加分类</a></li>
+          <li><a @click="changeRoute(4)">添加标签</a></li>
           <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>个人中心<span
             class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
