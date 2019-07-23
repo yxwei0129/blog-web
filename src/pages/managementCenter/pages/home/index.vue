@@ -1,5 +1,9 @@
 <template>
-  <div>q</div>
+  <div class="content-wrap">
+    <div class="main">
+      Home
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,9 +18,10 @@ export default {
       return this.$store.state.login.token
     }
   },
-  methods: {
-
-  }
+  created () {
+    // this.$store.dispatch('Login', {isLogin: true, token: 'token12233'})
+  },
+  methods: {}
 }
 </script>
 

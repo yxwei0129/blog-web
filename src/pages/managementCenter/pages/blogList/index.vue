@@ -6,7 +6,7 @@
           <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
               <div class="page-title">
-                <h1>Hello, <span>Welcome Here</span></h1>
+                <h1>Hello, <span>Welcome yxwei</span></h1>
               </div>
             </div>
           </div>
@@ -15,8 +15,8 @@
             <div class="page-header">
               <div class="page-title">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                  <li class="breadcrumb-item active">Table-Export</li>
+                  <li class="breadcrumb-item"><a href="#">首页</a></li>
+                  <li class="breadcrumb-item active">文章列表</li>
                 </ol>
               </div>
             </div>
@@ -30,73 +30,63 @@
               <div class="card">
                 <div class="bootstrap-data-table-panel">
                   <div class="table-responsive">
-                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                      <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Salary</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>$320,800</td>
-                      </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>$170,750</td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>$86,000</td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>$433,060</td>
-                      </tr>
-                      <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>$162,700</td>
-                      </tr>
-                      <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>$372,000</td>
-                      </tr>
-                      <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>$137,500</td>
-                      </tr>
-                      </tbody>
-                    </table>
+                    <el-table
+                      :data="tableData"
+                      border
+                      style="width: 100%">
+                      <el-table-column
+                        fixed
+                        prop="date"
+                        label="日期"
+                        width="150">
+                      </el-table-column>
+                      <el-table-column
+                        prop="name"
+                        label="姓名"
+                        width="120">
+                      </el-table-column>
+                      <el-table-column
+                        prop="province"
+                        label="省份"
+                        width="120">
+                      </el-table-column>
+                      <el-table-column
+                        prop="city"
+                        label="市区"
+                        width="120">
+                      </el-table-column>
+                      <el-table-column
+                        prop="address"
+                        label="地址"
+                        width="300">
+                      </el-table-column>
+                      <el-table-column
+                        prop="zip"
+                        label="邮编"
+                        width="120">
+                      </el-table-column>
+                      <el-table-column
+                        fixed="right"
+                        label="操作"
+                        width="100">
+                        <template slot-scope="scope">
+                          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+                          <el-button type="text" size="small">编辑</el-button>
+                        </template>
+                      </el-table-column>
+                    </el-table>
                   </div>
                 </div>
               </div>
-              <!-- /# card -->
             </div>
-            <!-- /# column -->
           </div>
-          <!-- /# row -->
 
           <div class="row">
             <div class="col-lg-12">
               <div class="footer">
-                <p>2018 © Admin Board. - <a href="#">example.com</a> / More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+                <p>2018 © Admin Board. - <a href="#">example.com</a> / More Templates <a href="http://www.cssmoban.com/"
+                                                                                         target="_blank" title="模板之家">模板之家</a>
+                  - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
               </div>
             </div>
           </div>
@@ -108,7 +98,45 @@
 
 <script>
 export default {
-  name: 'index'
+  name: 'index',
+  data () {
+    return {
+      tableData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1517 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1519 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1516 弄',
+        zip: 200333
+      }]
+    }
+  },
+  methods: {
+    handleClick (row) {
+      console.log(row)
+    }
+  }
 }
 </script>
 
