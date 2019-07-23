@@ -12,7 +12,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 // http请求拦截器 请求之前的一些操作
 axios.interceptors.request.use(config => {
-  config.headers.token = window.globalStore.state.login.token
+  config.headers.token = window.sessionStorage.getItem('token')
   if (config.method === 'post') {
     config.data = qs.stringify(config.data)// 防止post请求参数无法传到后台
   }
