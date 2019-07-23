@@ -5,7 +5,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../pages/login/index.vue'
 import Home from '../pages/home/index'
-import BlogList from '../pages/blogList'
+import BlogList from '../pages/blogList/index'
 import Add from '../pages/add'
 
 Vue.use(Router)
@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: Login
     },
