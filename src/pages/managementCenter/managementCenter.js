@@ -5,11 +5,20 @@ import Vue from 'vue'
 import router from './router/index'
 import store from './store/index'
 import Header from './components/Header'
+import Sliderbar from './components/Sliderbar'
 import axios from './axios/index'
+import constants from '../../constants'
+import Element from 'element-ui'
+// import { Message } from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(Element)
+// Vue.component(Message.name, Message)
+// Vue.prototype.$message = Message
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store
 window.$axios = axios
 window.globalStore = store
+window.constants = constants
 window.globalRouter = router
 router.beforeEach((to, from, next) => {
   // 会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了
@@ -23,7 +32,8 @@ export default new Vue({
   router,
   store,
   components: {
-    'top-header': Header
+    'top-header': Header,
+    'slider-bar': Sliderbar
   },
   created () {
     // 在页面加载时读取localStorage里的状态信息
