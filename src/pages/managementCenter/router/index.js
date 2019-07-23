@@ -5,6 +5,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../pages/login/index.vue'
 import Home from '../pages/home/index'
+import BlogList from '../pages/blogList'
+import Add from '../pages/add'
 
 Vue.use(Router)
 
@@ -19,6 +21,16 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/blogList',
+      name: 'BlogList',
+      component: BlogList
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: Add
     }
   ]
 })
