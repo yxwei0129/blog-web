@@ -10,7 +10,7 @@
  */
 const login = function (loginName, password) {
   let p = new Promise(function (resolve, reject) {
-    window.$axios.get('/api/management/login', {params: { loginName: loginName, password: password }})
+    window.$axios.get('/management/login', {params: { loginName: loginName, password: password }})
       .then(function (value) {
         if (value) {
           resolve(value)
@@ -25,7 +25,7 @@ const login = function (loginName, password) {
  */
 const logout = function () {
   let p = new Promise(function (resolve, reject) {
-    window.$axios.get('/api/management/logout')
+    window.$axios.get('/management/logout')
       .then(function (value) {
         if (value) {
           resolve(value)
