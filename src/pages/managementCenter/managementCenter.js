@@ -9,11 +9,9 @@ import Sliderbar from './components/Sliderbar'
 import axios from './axios/index'
 import constants from '../../constants'
 import Element from 'element-ui'
-// import { Message } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.use(Element)
-// Vue.component(Message.name, Message)
-// Vue.prototype.$message = Message
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store
 window.$axios = axios
@@ -35,10 +33,14 @@ export default new Vue({
     'top-header': Header,
     'slider-bar': Sliderbar
   },
+  computed: {
+    isLogin () {
+      return this.$store.state.login.isLogin
+    }
+  },
   created () {
     // 在页面加载时读取localStorage里的状态信息
     sessionStorage.getItem('userMsg') && this.$store.replaceState(Object.assign(this.$store.state, JSON.parse(sessionStorage.getItem('userMsg'))))
-
     // 在页面刷新时将vuex里的信息保存到localStorage里
     window.addEventListener('beforeunload', () => {
       sessionStorage.setItem('userMsg', JSON.stringify(this.$store.state))
