@@ -11,13 +11,18 @@ const state = {
     phone: '',
     city: '',
     email: ''
-  }
+  },
+  isLogin: true
 }
 
 const mutations = {
   // 此处的事件为上方 actions 中的 commit(types.DECREMENT)
-  updateLogin (state, value) {
+  updateLoginInfo (state, value) {
     state.token = value
+  },
+
+  updateLoginStatus (state, value) {
+    state.isLogin = value
   }
 }
 
@@ -29,13 +34,17 @@ const actions = {
           if (result.data.token) {
             sessionStorage.setItem('token', result.data.token)
           }
-          commit('updateLogin', result.data)
+          commit('updateLoginInfo', result.data)
           resolve(result)
         } else {
           reject(result)
         }
       })
     })
+  },
+
+  setLoginStatus ({commit}, value) {
+    commit('updateLoginStatus', value)
   }
 }
 
