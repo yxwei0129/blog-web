@@ -5,18 +5,19 @@ import loginApi from '../../api/login'
 import constants from '../../../../constants'
 
 const state = {
-  test: 'weiyuxin',
-  token: ''
+  userInfo: {
+    id: '',
+    username: '',
+    phone: '',
+    city: '',
+    email: ''
+  }
 }
 
 const mutations = {
   // 此处的事件为上方 actions 中的 commit(types.DECREMENT)
   updateLogin (state, value) {
     state.token = value
-  },
-
-  updateTest (state, value) {
-    state.test = value
   }
 }
 
@@ -25,17 +26,16 @@ const actions = {
     return new Promise(function (resolve, reject) {
       loginApi.login(value.loginName, value.password).then(function (result) {
         if (result.status === constants.responseCode.login.success) { // 登录成功
-          commit('updateLogin', result.data.token)
+          if (result.data.token) {
+            sessionStorage.setItem('token', result.data.token)
+          }
+          commit('updateLogin', result.data)
           resolve(result)
         } else {
           reject(result)
         }
       })
     })
-  },
-
-  setTest ({commit}, value) {
-    commit('updateTest', value)
   }
 }
 
