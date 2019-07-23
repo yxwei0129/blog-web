@@ -22,7 +22,9 @@ axios.interceptors.request.use(config => {
 })
 // http响应拦截器  请求之后的操作
 axios.interceptors.response.use(data => {
-  return data
+  if (data.status === 200) {
+    return data.data
+  }
 }, error => {
   switch (error.response.status) {
     case 401:
