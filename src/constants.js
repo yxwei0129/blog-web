@@ -10,5 +10,13 @@ export default {
       empty: 'SH-1002',
       error: 'SH-1001'
     }
+  },
+
+  sliderNav: {
+    articleList: '1',
+    articleAdd: '2',
+    categoryList: '3',
+    categoryAdd: '4',
+    tag: '5'
   }
 }
