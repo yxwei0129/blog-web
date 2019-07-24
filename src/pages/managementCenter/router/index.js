@@ -41,5 +41,10 @@ export default new Router({
     }, {
       path: '/tag',
       component: resolve => require(['../pages/tag'], resolve)
-    }]
+    },
+    {
+      path: '/music',
+      component: resolve => require(['../pages/music'], resolve)
+    }
+  ]
 })

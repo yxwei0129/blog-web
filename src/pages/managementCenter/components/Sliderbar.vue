@@ -13,7 +13,7 @@
             </ul>
           </li>
           <li class="label">分类</li>
-          <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> 类别管理
+          <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> 类别管理
             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
               <li :class="{'active':navIndex===constants.sliderNav.categoryAdd}"><a @click="changeRoute(constants.sliderNav.categoryAdd)">类别列表</a></li>
@@ -21,7 +21,9 @@
             </ul>
           </li>
           <li><a @click="changeRoute(constants.sliderNav.tag)">添加标签</a></li>
-          <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>个人中心<span
+          <li><a @click="changeRoute(constants.sliderNav.music)" class="sidebar-sub-toggle"><i class="ti-headphone"></i> 音乐管理</a></li>
+
+          <li><a class="sidebar-sub-toggle"><i class="ti-user"></i>个人中心<span
             class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
               <li><a @click="changeRoute(constants.sliderNav.personalInfo)">我的信息</a></li>
@@ -64,10 +66,12 @@ export default {
         case nav.tag:
           path = '/tag'
           break
+        case nav.music:
+          path = '/music'
+          break
         default:
           path = '/'
       }
-      debugger
       this.$store.dispatch('setNavIndex', category).then(() => {
         this.$router.push({path: path})
       })

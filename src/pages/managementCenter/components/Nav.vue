@@ -3,7 +3,7 @@
     <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
         <div class="page-title">
-          <h1>Hello, <span>Welcome yxwei</span></h1>
+          <h1>Hello, <span>yxwei</span></h1>
         </div>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <div class="page-header">
         <div class="page-title">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">首页</a></li>
+            <li class="breadcrumb-item"><a>首页</a></li>
             <li class="breadcrumb-item active">添加文章</li>
           </ol>
         </div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'nav'
+  name: 'index'
 }
 </script>
 

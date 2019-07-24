@@ -27,7 +27,13 @@
 <div id="app">
   <top-header v-if="isLogin"></top-header>
   <slider-bar v-if="isLogin"></slider-bar>
-  <router-view></router-view>
+  <div class="content-wrap">
+    <div class="main">
+      <div class="container-fluid">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 <!-- jquery vendor -->

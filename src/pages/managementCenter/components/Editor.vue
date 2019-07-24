@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted () {
-    var editor = new E(this.$refs.editor)
+    let editor = new E(this.$refs.editor)
     editor.customConfig.onchange = (html) => {
       this.editorContent = html
     }

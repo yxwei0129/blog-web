@@ -1,11 +1,7 @@
 <template>
-  <div class="content-wrap">
-    <div class="main">
-      <div class="container-fluid">
-        <top-nav></top-nav>
-        <router-view></router-view>
-      </div>
-    </div>
+  <div>
+    <top-nav></top-nav>
+    <router-view></router-view>
   </div>
 </template>
 

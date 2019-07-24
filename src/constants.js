@@ -17,6 +17,7 @@ export default {
     articleAdd: '2',
     categoryList: '3',
     categoryAdd: '4',
-    tag: '5'
+    tag: '5',
+    music: '6'
   }
 }
