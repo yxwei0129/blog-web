@@ -8,7 +8,6 @@ const state = {
 const mutations = {
   // 此处的事件为上方 actions 中的 commit(types.DECREMENT)
   updateNavIndex (state, value) {
-    debugger
     state.navIndex = value
   }
 }

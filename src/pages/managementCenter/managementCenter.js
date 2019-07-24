@@ -10,7 +10,6 @@ import axios from './axios/index'
 import constants from '../../constants'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
 Vue.use(Element)
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store

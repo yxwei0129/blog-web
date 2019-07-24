@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div ref="editor" style="text-align:left"></div>
+    <div id="editor" ref="editor" style="text-align:left"></div>
     <button v-on:click="getContent">查看内容</button>
   </div>
 </template>
 
 <script>
-import E from 'wangeditor'
-
+import WangEditor from 'wangeditor'
+// require('../../../../static/js/wangEditor-fullscreen-plugin')
 export default {
   name: 'editor',
   data () {
@@ -21,11 +21,12 @@ export default {
     }
   },
   mounted () {
-    let editor = new E(this.$refs.editor)
+    let editor = new WangEditor(this.$refs.editor)
     editor.customConfig.onchange = (html) => {
       this.editorContent = html
     }
     editor.create()
+    window.fullscreen.init('#editor')
   }
 }
 </script>
