@@ -2,6 +2,7 @@
   <div class="content-wrap">
     <div class="main">
       <div class="container-fluid">
+        <top-nav></top-nav>
         <router-view></router-view>
       </div>
     </div>
@@ -9,8 +10,12 @@
 </template>
 
 <script>
+import Nav from '../../components/Nav'
 export default {
-  name: 'index'
+  name: 'index',
+  components: {
+    'top-nav': Nav
+  }
 }
 </script>
 
