@@ -12,7 +12,7 @@ const state = {
     city: '',
     email: ''
   },
-  isLogin: true
+  isLogin: false
 }
 
 const mutations = {

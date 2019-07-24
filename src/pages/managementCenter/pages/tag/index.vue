@@ -1,5 +1,5 @@
 <template>
-    <div>添加类别</div>
+    <div>tag</div>
 </template>
 
 <script>

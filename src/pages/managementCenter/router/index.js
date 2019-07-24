@@ -3,10 +3,6 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '../pages/login/index.vue'
-import Home from '../pages/home/index'
-import BlogList from '../pages/blogList/index'
-import Add from '../pages/add'
 
 Vue.use(Router)
 
@@ -14,23 +10,36 @@ export default new Router({
   routes: [
     {
       path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/home',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/blogList',
-      name: 'BlogList',
-      component: BlogList
-    },
-    {
-      path: '/add',
-      name: 'Add',
-      component: Add
-    }
-  ]
+      component: resolve => require(['../pages/login'], resolve)
+    }, {
+      path: '/homePage',
+      component: resolve => require(['../pages/homePage'], resolve)
+    }, {
+      path: '/article',
+      component: resolve => require(['../pages/article'], resolve),
+      children: [
+        {
+          path: '/article/list',
+          component: resolve => require(['../pages/article/add/index'], resolve)
+        }, {
+          path: '/article/add',
+          component: resolve => require(['../pages/article/list/index'], resolve)
+        }
+      ]
+    }, {
+      path: '/category',
+      component: resolve => require(['../pages/category'], resolve),
+      children: [
+        {
+          path: '/category/list',
+          component: resolve => require(['../pages/category/list'], resolve)
+        }, {
+          path: '/category/add',
+          component: resolve => require(['../pages/category/add'], resolve)
+        }
+      ]
+    }, {
+      path: '/tag',
+      component: resolve => require(['../pages/tag'], resolve)
+    }]
 })

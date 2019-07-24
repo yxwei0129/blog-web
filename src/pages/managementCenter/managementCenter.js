@@ -14,14 +14,19 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(Element)
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store
+Vue.prototype.constants = constants
+window.constants = constants
 window.$axios = axios
 window.globalStore = store
-window.constants = constants
 window.globalRouter = router
 router.beforeEach((to, from, next) => {
   // 会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了
   // eslint-disable-next-line
-  next()
+  if (to.path === '/') {
+    window.globalRouter.push({path: '/login'})
+  } else {
+    next()
+  }
 })
 
 Vue.config.productionTip = false

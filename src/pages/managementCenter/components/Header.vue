@@ -4,11 +4,6 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="float-left">
-            <!--<div class="hamburger sidebar-toggle">-->
-            <!--<span class="line"></span>-->
-            <!--<span class="line"></span>-->
-            <!--<span class="line"></span>-->
-            <!--</div>-->
           </div>
           <div class="float-right">
             <div class="dropdown dib">
@@ -102,7 +97,7 @@
                       </li>
                       <li>
                         <a href="#">
-                          <img class="pull-left m-r-10 avatar-img" src="/static/assets/images/avatar/3.jpg" alt="">
+                          <img class="pull-left m-r-10 avatar-img" src="/static/images/avatar/3.jpg" alt="">
                           <div class="notification-content">
                             <small class="notification-timestamp pull-right">02:34 PM</small>
                             <div class="notification-heading">Michael Qin</div>
@@ -112,7 +107,7 @@
                       </li>
                       <li>
                         <a href="#">
-                          <img class="pull-left m-r-10 avatar-img" src="/static/assets/images/avatar/2.jpg" alt="">
+                          <img class="pull-left m-r-10 avatar-img" src="/static/images/avatar/2.jpg" alt="">
                           <div class="notification-content">
                             <small class="notification-timestamp pull-right">02:34 PM</small>
                             <div class="notification-heading">Mr.Wei</div>
@@ -146,12 +141,6 @@
                           <span>退出</span>
                         </a>
                       </li>
-                      <li>
-                        <a href="#">
-                          <i class="ti-email"></i>
-                          <span>Inbox</span>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -169,10 +158,9 @@ export default {
   name: 'Header',
   methods: {
     logout () {
-      let self = this
       this.$store.dispatch('setLoginStatus', false).then(function () {
         sessionStorage.clear()
-        self.$router.push({path: '/login'})
+        window.location.href = 'index.html'
       })
     }
   }
