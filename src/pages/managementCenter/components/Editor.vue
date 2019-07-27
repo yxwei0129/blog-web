@@ -1,13 +1,11 @@
 <template>
   <div>
     <div id="editor" ref="editor" style="text-align:left"></div>
-    <button v-on:click="getContent">查看内容</button>
   </div>
 </template>
 
 <script>
 import WangEditor from 'wangeditor'
-// require('../../../../static/js/wangEditor-fullscreen-plugin')
 export default {
   name: 'editor',
   data () {

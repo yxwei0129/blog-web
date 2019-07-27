@@ -18,6 +18,8 @@ export default {
     categoryList: '3',
     categoryAdd: '4',
     tag: '5',
-    music: '6'
+    music: '6',
+    daliyTemperList: '7',
+    daliyTemperAdd: '8'
   }
 }

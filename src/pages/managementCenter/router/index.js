@@ -45,6 +45,19 @@ export default new Router({
     {
       path: '/music',
       component: resolve => require(['../pages/music'], resolve)
+    },
+    {
+      path: '/daliyTemper',
+      component: resolve => require(['../pages/daliyTemper'], resolve),
+      children: [
+        {
+          path: '/daliyTemper/list',
+          component: resolve => require(['../pages/daliyTemper/list'], resolve)
+        }, {
+          path: '/daliyTemper/add',
+          component: resolve => require(['../pages/daliyTemper/add'], resolve)
+        }
+      ]
     }
   ]
 })

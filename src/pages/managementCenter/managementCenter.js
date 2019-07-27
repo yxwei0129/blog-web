@@ -9,6 +9,7 @@ import Sliderbar from './components/Sliderbar'
 import axios from './axios/index'
 import constants from '../../constants'
 import Element from 'element-ui'
+import Nav from './components/Nav'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(Element)
 Vue.prototype.HOST = '/api'
@@ -35,7 +36,8 @@ export default new Vue({
   store,
   components: {
     'top-header': Header,
-    'slider-bar': Sliderbar
+    'slider-bar': Sliderbar,
+    'top-nav': Nav
   },
   computed: {
     isLogin () {
