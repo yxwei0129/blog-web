@@ -2,6 +2,7 @@
   <div class="col-lg-12 p-r-0 title-margin-right">
     <div class="page-header">
       <div class="page-title">
+        <i class="el-icon-edit"></i>请添加类别:
         <section id="main-content">
           <div class="row">
             <div class="col-lg-12">

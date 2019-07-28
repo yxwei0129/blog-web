@@ -2,7 +2,7 @@
   <div class="col-lg-12 p-r-0 title-margin-right">
     <div class="page-header">
       <div class="page-title">
-        <h1>音乐管理</h1>
+        <i class="el-icon-edit"></i>请编辑文章
       </div>
     </div>
   </div>
