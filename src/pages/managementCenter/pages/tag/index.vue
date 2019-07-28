@@ -73,7 +73,7 @@
       <el-tag
         v-for="(item,index) in tableData"
         :key="item.id"
-        size="medium"
+        style="margin-left:10px"
         :type="index%2===0 ? 'success':index%3===0?'danger':'waring'"
       >{{ item.name }}
       </el-tag>
