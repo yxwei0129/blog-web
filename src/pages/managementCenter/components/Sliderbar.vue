@@ -13,13 +13,15 @@
             </ul>
           </li>
           <li class="label">分类</li>
-          <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> 类别管理
-            <span class="sidebar-collapse-icon ti-angle-down"></span></a>
-            <ul>
-              <li :class="{'active':navIndex===constants.sliderNav.categoryList}"><a @click="changeRoute(constants.sliderNav.categoryList)">类别列表</a></li>
-              <li :class="{'active':navIndex===constants.sliderNav.categoryAdd}"><a @click="changeRoute(constants.sliderNav.categoryAdd)">添加类别</a></li>
-            </ul>
-          </li>
+          <li :class="{'active':navIndex===constants.sliderNav.category}"><a @click="changeRoute(constants.sliderNav.category)" class="sidebar-sub-toggle"><i class="ti-direction"></i>添加类别</a></li>
+
+          <!--<li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> 类别管理-->
+            <!--<span class="sidebar-collapse-icon ti-angle-down"></span></a>-->
+            <!--<ul>-->
+              <!--<li :class="{'active':navIndex===constants.sliderNav.categoryList}"><a @click="changeRoute(constants.sliderNav.categoryList)">类别列表</a></li>-->
+              <!--<li :class="{'active':navIndex===constants.sliderNav.categoryAdd}"><a @click="changeRoute(constants.sliderNav.categoryAdd)">添加类别</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
           <li :class="{'active':navIndex===constants.sliderNav.tag}"><a @click="changeRoute(constants.sliderNav.tag)" class="sidebar-sub-toggle"><i class="ti-medall-alt"></i>添加标签</a></li>
 
           <li class="label">休闲一刻</li>
@@ -65,11 +67,8 @@ export default {
         case nav.articleAdd:
           path = '/article/list'
           break
-        case nav.categoryAdd:
-          path = '/category/add'
-          break
-        case nav.categoryList:
-          path = '/category/list'
+        case nav.category:
+          path = '/category'
           break
         case nav.tag:
           path = '/tag'

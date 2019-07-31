@@ -18,7 +18,7 @@
             prop="id"
             label="ID"
             align="center"
-            width="200">
+            width="100">
           </el-table-column>
           <el-table-column
             prop="name"
@@ -42,7 +42,7 @@
             prop="createBy"
             align="center"
             label="创建人"
-            width="200">
+            width="300">
           </el-table-column>
           <el-table-column
             align="right">

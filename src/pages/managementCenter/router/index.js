@@ -28,16 +28,7 @@ export default new Router({
       ]
     }, {
       path: '/category',
-      component: resolve => require(['../pages/category'], resolve),
-      children: [
-        {
-          path: '/category/list',
-          component: resolve => require(['../pages/category/list'], resolve)
-        }, {
-          path: '/category/add',
-          component: resolve => require(['../pages/category/add'], resolve)
-        }
-      ]
+      component: resolve => require(['../pages/category'], resolve)
     }, {
       path: '/tag',
       component: resolve => require(['../pages/tag'], resolve)
