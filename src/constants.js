@@ -15,8 +15,7 @@ export default {
   sliderNav: {
     articleList: '1',
     articleAdd: '2',
-    categoryList: '3',
-    categoryAdd: '4',
+    category: '3',
     tag: '5',
     music: '6',
     daliyTemperList: '7',
