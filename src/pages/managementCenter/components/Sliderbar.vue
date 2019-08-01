@@ -29,8 +29,8 @@
           <li><a class="sidebar-sub-toggle"><i class="ti-comments-smiley"></i> 每日一言
             <span class="sidebar-collapse-icon ti-angle-down"></span></a>
             <ul>
-              <li :class="{'active':navIndex===constants.sliderNav.daliyTemperList}"><a @click="changeRoute(constants.sliderNav.daliyTemperList)">我的动态</a></li>
-              <li :class="{'active':navIndex===constants.sliderNav.daliyTemperAdd}"><a @click="changeRoute(constants.sliderNav.daliyTemperAdd)" class="sidebar-sub-toggle"> 添加动态</a></li>
+              <li :class="{'active':navIndex===constants.sliderNav.daliyList}"><a @click="changeRoute(constants.sliderNav.daliyList)">动态管理</a></li>
+              <li :class="{'active':navIndex===constants.sliderNav.daliyAdd}"><a @click="changeRoute(constants.sliderNav.daliyAdd)" class="sidebar-sub-toggle"> 添加动态</a></li>
             </ul>
           <li class="label">个人管理</li>
           <li><a class="sidebar-sub-toggle"><i class="ti-user"></i>个人中心<span
@@ -76,11 +76,11 @@ export default {
         case nav.music:
           path = '/music'
           break
-        case nav.daliyTemperList:
-          path = '/daliyTemper/list'
+        case nav.daliyList:
+          path = '/daliy/list'
           break
-        case nav.daliyTemperAdd:
-          path = '/daliyTemper/add'
+        case nav.daliyAdd:
+          path = '/daliy/add'
           break
         default:
           path = '/'

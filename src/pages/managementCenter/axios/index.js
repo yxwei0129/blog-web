@@ -28,7 +28,7 @@ axios.interceptors.response.use(data => {
 }, error => {
   switch (error.response.status) {
     case 401:
-      window.globalStore.dispatch('setLoginStatus', true).then(function () {
+      window.globalStore.dispatch('setLoginStatus', false).then(function () {
         window.globalStore.dispatch('setNavIndex', 1).then(function () {
           window.globalRouter.push({path: '/'})
         })

@@ -38,15 +38,15 @@ export default new Router({
       component: resolve => require(['../pages/music'], resolve)
     },
     {
-      path: '/daliyTemper',
-      component: resolve => require(['../pages/daliyTemper'], resolve),
+      path: '/daliy',
+      component: resolve => require(['../pages/daliy'], resolve),
       children: [
         {
-          path: '/daliyTemper/list',
-          component: resolve => require(['../pages/daliyTemper/list'], resolve)
+          path: '/daliy/list',
+          component: resolve => require(['../pages/daliy/list'], resolve)
         }, {
-          path: '/daliyTemper/add',
-          component: resolve => require(['../pages/daliyTemper/add'], resolve)
+          path: '/daliy/add',
+          component: resolve => require(['../pages/daliy/add'], resolve)
         }
       ]
     }

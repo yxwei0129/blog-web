@@ -13,11 +13,6 @@ export default {
       editorContent: ''
     }
   },
-  methods: {
-    getContent: function () {
-      alert(this.editorContent)
-    }
-  },
   mounted () {
     let editor = new WangEditor(this.$refs.editor)
     editor.customConfig.onchange = (html) => {

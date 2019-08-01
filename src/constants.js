@@ -18,7 +18,7 @@ export default {
     category: '3',
     tag: '5',
     music: '6',
-    daliyTemperList: '7',
-    daliyTemperAdd: '8'
+    daliyList: '7',
+    daliyAdd: '8'
   }
 }
