@@ -1170,6 +1170,17 @@ a.dt-button.active:not(.disabled) {
 /*[contenteditable]:focus {*/
   /*background: #a4b3fe;*/
 /*}*/
+
+div.el-message-box__wrapper {
+  z-index: 1112008 !important;
+}
+div.v-modal {
+  z-index: 1112007 !important;
+}
+
+.sidebar .nano-content>ul>li.active>a, .sidebar .nano-content>ul>li>ul>li.open>a, .sidebar .nano-content>ul>li>ul>li>ul{
+  background:linear-gradient(to right, #5772FE , #6D85FB)
+}
 .control-bar {
   position: relative;
   z-index: 100;
