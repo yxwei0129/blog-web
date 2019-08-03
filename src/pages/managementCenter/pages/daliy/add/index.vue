@@ -34,7 +34,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        DailyService.saveDailyDetail(detail).then((result) => {
+        DailyService.saveDaily(detail).then((result) => {
           if (result.status === 'SH-2001') {
             this.$store.dispatch('setNavIndex', window.constants.sliderNav.daliyList).then(() => {
               this.$router.push({path: '/daliy/list'})

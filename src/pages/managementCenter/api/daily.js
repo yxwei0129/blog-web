@@ -2,9 +2,14 @@
  * created by Yuxin Wei on 2019/7/31
  */
 
-const saveDailyDetail = function (description) {
+/**
+ * 保存每日动态
+ * @param description
+ * @returns {Promise<any>}
+ */
+const saveDaily = function (description) {
   let p = new Promise(function (resolve, reject) {
-    window.$axios.post('/management/saveDailyDetail', {description: description})
+    window.$axios.post('/management/saveDaily', {description: description})
       .then(function (value) {
         if (value) {
           resolve(value)
@@ -32,4 +37,21 @@ const getDailyList = function (pageStart, pageNumber) {
   return p
 }
 
-export default {saveDailyDetail, getDailyList}
+/**
+ * 根据dailyId获取详情及评论
+ * @param id
+ * @returns {Promise<any>}
+ */
+const getDailyDetail = function (dailyId) {
+  let p = new Promise(function (resolve, reject) {
+    window.$axios.post('/management/getDailyDetail', {dailyId: dailyId})
+      .then(function (value) {
+        if (value) {
+          resolve(value)
+        }
+      })
+  })
+  return p
+}
+
+export default {saveDaily, getDailyList, getDailyDetail}

@@ -73,7 +73,6 @@ export default {
     }
   },
   created () {
-    debugger
     this.model = this.$route.query.model;
     this.generateId()
   },

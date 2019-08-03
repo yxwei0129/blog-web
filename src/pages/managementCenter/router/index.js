@@ -47,6 +47,10 @@ export default new Router({
         }, {
           path: '/daliy/add',
           component: resolve => require(['../pages/daliy/add'], resolve)
+        },
+        {
+          path: '/daliy/detail',
+          component: resolve => require(['../pages/daliy/detail'], resolve)
         }
       ]
     }

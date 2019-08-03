@@ -11,6 +11,8 @@ import constants from '../../constants'
 import Element from 'element-ui'
 import Nav from './components/Nav'
 import 'element-ui/lib/theme-chalk/index.css'
+import custom from './filter'
+
 Vue.use(Element)
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store
@@ -19,6 +21,10 @@ window.constants = constants
 window.$axios = axios
 window.globalStore = store
 window.globalRouter = router
+Object.keys(custom).forEach(key => {
+  Vue.filter(key, custom[key])
+})
+
 router.beforeEach((to, from, next) => {
   // 会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了
   // eslint-disable-next-line
