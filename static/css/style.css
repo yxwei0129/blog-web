@@ -66,6 +66,52 @@
 /*    Brand color
 ----------------------*/
 /*----------------font-------------------*/
+body{
+  overflow: hidden;
+}
+/*.main::-webkit-scrollbar { width:10px; height:2px; background:#ccc; border-radius:10px;!*外层轨道*!}*/
+
+.comment-author{
+  height:60px!important;
+  width: 60px!important;
+  border-radius:50%
+}
+
+.comment-author-name{
+  color: #337ab7;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration:underline;
+  font-style: italic;
+  cursor: pointer
+}
+
+.comment-author-name:hover{
+  text-decoration: none;
+  color: #868e96;
+}
+
+.comment-time{
+  margin-top: 8px;
+  color: #868e96;
+  font-weight: lighter;
+}
+
+.comment-body{
+  margin-top: 10px !important;
+  font-size: 16px;
+}
+
+
+.main{
+  max-height: 680px;
+  overflow: scroll;
+}
+
+.ti-angle-right:before{
+  color: #0ae408;
+  font-size: 18px;
+}
 .icon-name {
   color: #000;
 }
