@@ -12,7 +12,7 @@
             type="index"
             align="center"
             label="序号"
-            width="50">
+            width="100">
           </el-table-column>
           <el-table-column
             prop="id"
@@ -45,9 +45,10 @@
             width="200">
           </el-table-column>
           <el-table-column
-            prop="createBy"
+            prop="user.username"
+            align="center"
             label="创建人"
-            width="200">
+            width="150">
           </el-table-column>
           <el-table-column
             align="right">

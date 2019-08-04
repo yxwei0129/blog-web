@@ -2,8 +2,6 @@
  * created by Yuxin Wei on 2019/8/2
  */
 
-var moment = require('moment')
-
 export default {
 
   /**

@@ -79,9 +79,7 @@ export default {
   methods: {
 
     saveCategory () {
-      debugger
       CategoryService.saveCategory(this.model.id, this.model.name, this.model.description, this.model.enabled).then(function (result) {
-        debugger
       })
     },
 

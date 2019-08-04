@@ -54,4 +54,16 @@ const getDailyDetail = function (dailyId) {
   return p
 }
 
-export default {saveDaily, getDailyList, getDailyDetail}
+const deleteComment = function (id) {
+  let p = new Promise(function (resolve, reject) {
+    window.$axios.post('/management/deleteComment', {id: id})
+      .then(function (value) {
+        if (value) {
+          resolve(value)
+        }
+      })
+  })
+  return p
+}
+
+export default {saveDaily, getDailyList, getDailyDetail, deleteComment}

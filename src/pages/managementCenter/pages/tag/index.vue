@@ -18,7 +18,7 @@
             prop="id"
             label="ID"
             align="center"
-            width="100">
+            width="200">
           </el-table-column>
           <el-table-column
             prop="name"
@@ -39,10 +39,10 @@
             width="200">
           </el-table-column>
           <el-table-column
-            prop="createBy"
+            prop="user.username"
             align="center"
             label="创建人"
-            width="300">
+            width="200">
           </el-table-column>
           <el-table-column
             align="right">
@@ -50,7 +50,7 @@
               <el-input
                 v-model="search"
                 size="mini"
-                width="150"
+                width="200"
                 placeholder="输入标签名搜索"/>
             </template>
             <template slot-scope="scope">
