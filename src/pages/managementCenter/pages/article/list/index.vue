@@ -38,12 +38,12 @@
                     width="200">
                   </el-table-column>
                   <el-table-column
-                    prop="like"
+                    prop="likeCount"
                     label="点赞"
                     width="120">
                   </el-table-column>
                   <el-table-column
-                    prop="comment"
+                    prop="commentCount"
                     label="评论"
                     width="120">
                   </el-table-column>
@@ -91,54 +91,32 @@
 </template>
 
 <script>
+import ArticleService from '../../../api/article'
 export default {
   name: 'index',
   data () {
     return {
-      tableData: [{
-        title: '那年',
-        category: '情感',
-        tag: '文艺',
-        recommend: '5',
-        like: '39',
-        comment: '47',
-        updateTime: '2019-4-4',
-        createTime: '2019-4-1',
-        createBy: 'yxwei'
-      }, {
-        title: '那年',
-        category: '情感',
-        tag: '文艺',
-        recommend: '5',
-        like: '39',
-        comment: '47',
-        updateTime: '2019-4-4',
-        createTime: '2019-4-1',
-        createBy: 'yxwei'
-      }, {
-        title: '那年',
-        category: '情感',
-        tag: '文艺',
-        recommend: '5',
-        like: '39',
-        comment: '47',
-        updateTime: '2019-4-4',
-        createTime: '2019-4-1',
-        createBy: 'yxwei'
-      }, {
-        title: '那年',
-        category: '情感',
-        tag: '文艺',
-        recommend: '5',
-        like: '39',
-        comment: '47',
-        updateTime: '2019-4-4',
-        createTime: '2019-4-1',
-        createBy: 'yxwei'
-      }]
+      tableData: []
     }
   },
+  created () {
+    this.getArticleList()
+  },
   methods: {
+
+    /**
+     * 查询所有tag
+     */
+    getArticleList () {
+      ArticleService.getArticleList().then((result) => {
+        if (result.status === 'SH-2001') {
+          this.tableData = result.data
+        } else {
+          this.$message.error('获取标签失败!')
+        }
+      })
+    },
+
     handleClick (row) {
       console.log(row)
     }

@@ -12,7 +12,6 @@ import Element from 'element-ui'
 import Nav from './components/Nav'
 import 'element-ui/lib/theme-chalk/index.css'
 import custom from './filter'
-
 Vue.use(Element)
 Vue.prototype.HOST = '/api'
 Vue.prototype.$store = store

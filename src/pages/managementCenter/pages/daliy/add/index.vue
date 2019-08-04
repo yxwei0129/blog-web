@@ -1,7 +1,7 @@
 <template>
   <div>
     <i class="el-icon-edit"></i>请编辑动态
-    <the-editor style="margin-top: 20px" ref="dailyEditor"></the-editor>
+    <the-editor style="margin-top: 20px" ref="editor"></the-editor>
     <br/>
     <el-button type="primary" style="float: right" @click="saveDaily()">上传<i
       class="el-icon-upload el-icon--right"></i></el-button>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     saveDaily () {
-      let detail = this.$refs.dailyEditor.editorContent
+      let detail = this.$refs.editor.editorContent
       if (!detail) {
         this.$message.error('动态内容为空!')
         return

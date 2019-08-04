@@ -27,7 +27,7 @@
 <body>
 <div id="app">
   <top-header v-if="isLogin"></top-header>
-  <slider-bar v-if="isLogin"></slider-bar>
+  <slider-bar v-show="isLogin"></slider-bar>
   <div class="content-wrap">
     <div class="main">
       <div class="container-fluid">
@@ -42,10 +42,11 @@
 <script src="/static/js/lib/jquery.min.js"></script>
 <script src="/static/js/lib/jquery.nanoscroller.min.js"></script>
 <!-- nano scroller -->
-<script src="/static/js/lib/menubar/sidebar.js"></script>
 <script src="/static/js/lib/preloader/pace.min.js"></script>
 <script src="/static/js/lib/bootstrap.min.js"></script>
 <script src="/static/js/scripts.js"></script>
 <script src="/static/js/wangEditor-fullscreen-plugin.js"></script>
+<script src="/static/js/lib/menubar/sidebar.js"></script>
+
 </body>
 </html>
