@@ -71,7 +71,7 @@
     _this.$window.on('resize', function() {
       _this.windowResize();
     });
-    
+
     _this.windowResize();
 
     // no transition disable
@@ -195,7 +195,7 @@
       // reinit nano scroller
       _this.$nano.nanoScroller();
     });
-    
+
     subMenu.parent().removeClass('open');
     subMenu.find('li a.sidebar-sub-toggle').parent().removeClass('open');
   }
